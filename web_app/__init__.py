@@ -1,9 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+from flask_session import Session
 
 db = SQLAlchemy()
-DB_NAME = 'database.db'
+DB_NAME = 'trackr.db'
 
 def init_app():
     # Creates app
@@ -11,6 +12,11 @@ def init_app():
 
     # Code from finance pset to refresh web app
     app.config["TEMPLATES_AUTO_RELOAD"] = True
+
+    # Code from finance pset to make the session use filesystem
+    app.config["SESSION_PERMANENT"] = False
+    app.config["SESSION_TYPE"] = "filesystem"
+    Session(app)
 
     # Doesn't track modifications
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -20,14 +26,18 @@ def init_app():
     app.register_blueprint(route, url_prefix='/')
     
     # Initializes the database
-    app.config["SQL_ALCHEMY_DATABASE_URI"] = f'sqlite:///{DB_NAME}'
+    app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
+
+    from .models import User
 
     # Creates database
     create_db(app)
+
+    # Returns the app
     return app
 
-#Creates the db if it doesn't exist already
+# Creates the db if it doesn't exist already
 def create_db(app):
-    if not path.exists("CS50/" + DB_NAME):
+    if not path.exists("web_app/" + DB_NAME):
         db.create_all(app=app)

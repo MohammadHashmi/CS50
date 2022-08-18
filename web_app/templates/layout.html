@@ -20,13 +20,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="collapse-toggle">
-                <div class="navbar-nav justify-content-end">
-                    <a class="nav-link" href="/income">Income</a>
-                    <a class="nav-link" href="/expenses">Expenses</a>
-                    <a class="nav-link" href="/visuals">Visuals</a>
-                    <a class="nav-link" href="/logout">Log Out</a>
-                    <a class="nav-link" href="/register">Register</a>
-                </div>
+                {% if session["user_id"] %}
+                    <div class="navbar-nav justify-content-end">
+                        <a class="nav-link" href="/income">Income</a>
+                        <a class="nav-link" href="/expenses">Expenses</a>
+                        <a class="nav-link" href="/visuals">Visuals</a>
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </div>
+                {% else %}
+                    <div class="navbar-nav justify-content-end">
+                        <a class="nav-link" href="/register">Register</a>
+                    </div>
+                {% endif %}
             </div>
         </div>
       </nav>
