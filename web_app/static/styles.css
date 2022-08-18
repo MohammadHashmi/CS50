@@ -1,0 +1,10 @@
+#navigation
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-collapse
+{
+    margin: 10px;
+}
