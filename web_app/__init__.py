@@ -30,6 +30,7 @@ def init_app():
     db.init_app(app)
 
     from .models import User
+    from .models import Earned
 
     # Creates database
     create_db(app)

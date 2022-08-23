@@ -64,6 +64,11 @@ body
     background-color: #88d3b4;
 }
 
+select 
+{
+    width: 100%;
+}
+
 #login-p 
 {
     margin-top: 15px;
@@ -73,4 +78,26 @@ body
 
 form p a {
     color: #008e76;
+}
+
+.btn:hover
+{
+    background-color: #46cf77;
+}
+
+.income 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-group
+{
+    text-align: left;
+    margin-bottom: 10px;
 }

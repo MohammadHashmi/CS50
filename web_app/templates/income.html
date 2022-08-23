@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block title %} Income {% endblock %}
+
+{% block main %}
+    <div class="income">
+        <form method="post" class="form">
+            <div class="form-group">
+                <label for="amount-earned">Amount Earned</label>
+                <input type="number" class="form-control" id="amount-earned" placeholder="Amount" name="amount">
+            </div>
+            <div class="form-group">
+                <div class="input-group-prepend">
+                    <label for="month">Month</label>
+                </div>
+                <select class="custom-select" id="month" name="month">
+                    <option selected>Choose...</option>
+                    {% for month in months1 %}
+                    <option>{{ month }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!--Chart template was inspired by https://ordinarycoders.com/blog/article/11-chart-js-examples and https://www.chartjs.org/docs/latest/configuration/responsive.html-->
+
+        <div class="store-chart" style="position: relative; height:50%; width:50%">
+            <canvas id="myChart" maintainAspectRation="false"></canvas>
+            {% block javascript %}
+            <script>
+                data = JSON.parse({{ data | tojson }})
+                months = JSON.parse({{ months | tojson}})
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: months,
+                        datasets: [{
+                            backgroundColor: "#46cf77",
+                            label: 'Money Earned By Month',
+                            data: data,
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+            {% endblock %}
+        </div>
+    </div>
+    
+    
+{% endblock %}
