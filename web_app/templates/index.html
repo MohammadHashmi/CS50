@@ -2,6 +2,10 @@
 {% block title %} Homepage {% endblock %}
 
 {% block main %}
-    <h1>Hello world</h1>
-    <h2>Joe amma</h2>
+    <div class="index">
+        <button class="btn btn-home"><strong>This year, you have earnt: {{ income_earned}}</strong></button>
+        <button class="btn btn-home"><strong>This year, you have spent: {{ income_spent }}</strong></button>
+        <button class="btn btn-home"><strong>This leaves you with a total of: {{ total_income }}</strong></button>
+    </div>
+
 {% endblock %}

@@ -2,11 +2,11 @@
 {% block title %} Income {% endblock %}
 
 {% block main %}
-    <div class="income">
-        <form method="post" class="form">
+    <div class="pages">
+        <form method="post" class="form" action="/income">
             <div class="form-group">
                 <label for="amount-earned">Amount Earned</label>
-                <input type="number" class="form-control" id="amount-earned" placeholder="Amount" name="amount">
+                <input type="number" class="form-control" id="amount-earned" placeholder="Amount" name="amount" step="any">
             </div>
             <div class="form-group">
                 <div class="input-group-prepend">

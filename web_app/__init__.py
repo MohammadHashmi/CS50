@@ -29,8 +29,7 @@ def init_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
-    from .models import User
-    from .models import Earned
+    from .models import User, Earned, Expenses
 
     # Creates database
     create_db(app)

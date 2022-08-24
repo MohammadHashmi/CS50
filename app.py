@@ -1,4 +1,4 @@
-# DISCLAIMER: For good design purposes, I made my Flask template very similar to the one seen in the video below, I did not come up with the design myself
+# DISCLAIMER: For good design purposes, I made my Flask template very similar to the one seen in the video below, I did not come up with most of the design myself
 # https://www.youtube.com/watch?v=GQcM8wdduLI&list=PLzMcBGfZo4-nK0Pyubp7yIG0RdXp6zklu&index=1
 
 
