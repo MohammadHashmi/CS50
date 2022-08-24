@@ -3,9 +3,9 @@
 
 {% block main %}
     <div class="index">
-        <button class="btn btn-home"><strong>This year, you have earnt: {{ income_earned}}</strong></button>
-        <button class="btn btn-home"><strong>This year, you have spent: {{ income_spent }}</strong></button>
-        <button class="btn btn-home"><strong>This leaves you with a total of: {{ total_income }}</strong></button>
+        <a class="home-link" href="/income">This year, you have earnt: {{ income_earned}}</a>
+        <a class="home-link" href="/expenses">This year, you have spent: {{ income_spent }}</a>
+        <a class="home-link">This leaves you with a total of: {{ total_income }}</a>
     </div>
 
 {% endblock %}
