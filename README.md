@@ -39,3 +39,12 @@ app.py: Responsible for calling the init_app function and actually creating the 
 requirements.txt: All the libraries required to run this
 
 README.md: This!
+
+### STRUGGLES AND SOLUTIONS
+This was my first time coding outside of the CS50 IDE and it was tough at first to figure out how to set up an IDE of my own with everything I needed. I used plenty of documentation and looked at a few tutorials to ultimately set it up for myself.  
+Wanting to build the project without any of the training wheels from CS50, I had to learn flask-sqlalchemy to make my project. It took a lot of effort and tutorials but in the end I found what worked for me and was able to effectively implement it into my code
+Using something like chart.js for the first time was a struggle but also a great learning experience. It helped me understand how to use resources online to make my projects aesthetic and functional.
+One struggle I faced early on was trying to make sure my code was well designed and organized from the start to save me from having to fix it later on. I used a tutorial (which I have linked in my code) to make sure the file organization was neat and well done to make it easy to understand. In terms of code I just made sure to double check my code after writing it to see if I knew a way to make it more efficient
+
+### FINAL NOTICES
+All of the resources I used to help me while making this are linked in the code, respective to where I implemented them. You can feel free to message me on discord Dubi#8195 if you have any concerns. Thanks!
