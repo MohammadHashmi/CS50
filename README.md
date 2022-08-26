@@ -8,7 +8,7 @@ Made with Python, Flask, Flask-sqlalchemy, HTML, CSS, and Javascript, Trackr was
 The website greets the user with a login page and allows the user to create an account if they haven't already. Once it authenticates a login/register it takes the user to the home page. There, the user can see their yearly income, expenses and the money they have left over. The user can report any income they earnt. After submitting an income they can see it appear on the chart and can add as many incomes as they want. The expenses page works very similarly but it takes care of how much the user spent in a certain month.
 
 ### FILE DESIGN AND FUNCTION
-__pycache__, .venv and flask_session: Folders made by the system to be able to run the program in a virtual flask environment
+_pycache_, .venv and flask_session: Folders made by the system to be able to run the program in a virtual flask environment
 
 web_app: The folder where majority of my program was written (Everything except app.py, requirements.txt and the README!)
 
@@ -26,7 +26,7 @@ web_app/templates/income.html and web_app/templates/expenses.html: Used chart.js
 
 web_app/templates/apology.html: In case of an error, the developer can print an error message telling the user what went wrong
 
-web_app/__init__.py: This file was made to define the functions that would be called to initialize the app and database.
+web_app/_init_.py: This file was made to define the functions that would be called to initialize the app and database.
 
 web_app/models.py: This file contained the flask-sqlalchemy models for the database
 
